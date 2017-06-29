@@ -1,10 +1,7 @@
-var express = require('express');
-var router = express.Router();
+// var express = require('express');
+// var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+
 
 //////////////////////////////////////
 
@@ -15,6 +12,16 @@ const https = require('https');
 const watson = require('watson-developer-cloud');
 const fs = require('fs');
 const bodyParser = require('body-parser')
+
+
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+
+
 
 router.patch('/watson', function(req, res, next) {
 
