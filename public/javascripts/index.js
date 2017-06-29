@@ -36,7 +36,7 @@ function snapshot() {
         // });
 
         $.ajax({
-            url: '/api/users/watson',
+            url: '/watson',
             type: 'PATCH',
             data: {'imgur_url': res.data.link},
             success: function(result) {
