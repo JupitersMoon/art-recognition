@@ -24,15 +24,43 @@
   <h1>CAMERA</h1>
 
 
-  <div class="">
+  <div class="row">
 
-    <div class="">
+    <div class="col">
       <video autoplay class="vidCanvas"></video>
       <canvas style="display:none;" width="720" height="720"></canvas>
     </div>
+  </div>
 
-    <div>
-      <img src="" class="snapshot">
+  <div class="row">
+    <div class="col">
+      <img src="" class="snapshot" id="destinationImage">
+    </div>
+  </div>
+
+  <h1>DISPLAY RESULTS</h1>
+
+  <div class="row">
+    <div class="col s12 m12 l6">
+      <div class="card-small fog-red shadow-border">
+        <div class="card-content text-padding">
+          <h5> Artist </h5>
+        </div>
+        <div class="card-image fog-wine data-padding" id="artist">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m12 l6">
+      <div class="card-small fog-red shadow-border">
+        <div class="card-content text-padding">
+          <h5> Score </h5>
+        </div>
+        <div class="card-image fog-wine data-padding" id="score">
+        </div>
+      </div>
     </div>
   </div>
 

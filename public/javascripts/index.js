@@ -14,7 +14,7 @@ function snapshot() {
     // "image/webp" works in Chrome.
     // Other browsers will fall back to image/png.
     var b64image = canvas.toDataURL('image/png');
-    document.querySelector('img').src = b64image;
+    document.querySelector('#destinationImage').src = b64image;
     var base64Image = b64image.replace(/^data:image\/png;base64,/, "");
     // console.log(base64Image);
 
@@ -40,7 +40,20 @@ function snapshot() {
             type: 'PATCH',
             data: {'imgur_url': res.data.link},
             success: function(result) {
-                console.log("YAY: ", result);
+              console.log("YAY: ", result);
+                console.log("YAY: ", typeof result);
+
+                result = JSON.parse(result)
+
+                let artistResult = {
+                  artist: result.images[0].classifiers[0].classes[0].class,
+                  score: result.images[0].classifiers[0].classes[0].score
+                }
+                // JSON.stringify()
+
+                $('#artist').append('<h4>' + artistResult.artist + '</h4>')
+                $('#score').append('<h4>' + artistResult.score + '</h4>')
+
             }
         });
       }
