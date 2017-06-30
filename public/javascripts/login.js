@@ -1,6 +1,5 @@
 $(document).ready(() => {
   // 'use strict';
-  // console.log('Huuuurrrreeeee ALLLRricaaa');
 
   // $('.button-collapse').sideNav();
 
@@ -10,8 +9,6 @@ $(document).ready(() => {
     const email = $('#email').val().trim();
     const password = $('#password').val().trim();
 
-    console.log('email: ', email);
-    console.log('password: ', password);
 
     if (!email) {
       return Materialize.toast('Email must not be blank', 3000);
