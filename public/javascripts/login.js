@@ -1,13 +1,17 @@
-(function() {
-  'use strict';
+$(document).ready(() => {
+  // 'use strict';
+  // console.log('Huuuurrrreeeee ALLLRricaaa');
 
-  $('.button-collapse').sideNav();
+  // $('.button-collapse').sideNav();
 
   $('#loginForm').submit((event) => {
     event.preventDefault();
 
     const email = $('#email').val().trim();
-    const password = $('#password').val();
+    const password = $('#password').val().trim();
+
+    console.log('email: ', email);
+    console.log('password: ', password);
 
     if (!email) {
       return Materialize.toast('Email must not be blank', 3000);
@@ -22,7 +26,7 @@
       data: JSON.stringify({ email, password }),
       dataType: 'json',
       type: 'POST',
-      url: '/token'
+      url: '/login/token'
     };
 
     $.ajax(options)
@@ -33,4 +37,4 @@
         Materialize.toast($xhr.responseText, 3000);
       });
   });
-})();
+})

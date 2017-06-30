@@ -7,7 +7,7 @@ const humps = require('humps');
 const knex = require('../knex');
 
 
-let insertUser = (data) => knex('users').insert(data).returning(['id', 'first_name', 'last_name', 'email'])
+let insertUser = (data) => knex('users').insert(data).returning(['id', 'email'])
 
 
 router.post('/users', (req, res, next) => {

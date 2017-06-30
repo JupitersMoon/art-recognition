@@ -59,6 +59,4 @@ navigator.getUserMedia({
 }, errorCallback);
 
 document.body.appendChild(video);
-
-
 })
