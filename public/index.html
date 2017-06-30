@@ -1,30 +1,115 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Heloo Wuuurld</title>
+
+<head>
+  <meta charset="utf-8">
+  <title>Art ID</title>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="/javascripts/index.js"></script>
+  <script src="/javascripts/index.js"></script>
+  <script src="/javascripts/materialize.js"></script>
+  <script src="/javascripts/materialize.min.js"></script>
+
+  <link href="stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
 
 
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script> -->
-
-  </head>
-  <body>
+<body class="">
 
 
-    <h1>Helllooooo Alrriicia</h1>
+  <!-- <div class="parallax-container"><img src="img/hero.jpg" alt="Unsplashed background img 1"></div> -->
 
-    <div class="">
-      <video autoplay class="vidCanvas" width="720" height="720"></video>
-      <img src="" class="snapshot" width="720" height="720">
-      <canvas style="display:none;" width="720" height="720"></canvas>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h2 class="header center black-text text-darken-1">Visual Art Recognition</h2>
+        <!-- <div class="row center">
+          <h4 class="header col s12 light black-text">Wherever You Are</h4>
+        </div> -->
+      </div>
     </div>
+  </div>
+
+
+  <main class="container">
+    <div class="row">
+      <form id="loginForm" class="col offset-s2 s8">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Log in</span>
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Email" id="email" type="text" class="validate">
+                <!-- <label for="email">Email</label> -->
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Password" id="password" type="password" class="validate">
+                <!-- <label for="password">Password</label> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="card-action">
+            <button class="waves-effect waves-light btn-large" type="submit" name="action">
+                <i class="material-icons left"></i>
+                Log in
+              </button>
+              <button class="waves-effect waves-light btn-large" type="submit" name="action">
+                  <i class="material-icons right"></i>
+                  Sign up
+                </button>
+          </div>
+
+          <a href="/camera.html">Continue without sign in</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="fog-wine">
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <br><br>
+          <a id="logo-bottom-container" href="#" class="brand-logo white-text"><h5>Go Fly</h5></a>
+          <p class="white-text text-darken-4">Unmaned Aerial Vehicle Weather Monitoring</p>
+        </div>
+        <div class="col l3 s12">
+
+        </div>
+        <div class="col l3 s12">
+          <br><br>
+          <ul>
+            <li><a class="white-text" href="index.html">Home</a></li>
+            <li><a class="white-text" href="display.html">Display</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div class="footer-copyright "> -->
+    <div class="container white-text">
+      &copy; 2017 SLH
+      <a class="white-text"></a>
+    </div>
+    <!-- </div> -->
+  </footer>
 
 
 
 
-  </body>
+
+
+
+
+
+
+</body>
+
 </html>

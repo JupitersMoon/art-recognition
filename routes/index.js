@@ -17,7 +17,9 @@ const bodyParser = require('body-parser')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', {
+    title: 'Express'
+  });
 });
 
 
@@ -43,22 +45,27 @@ router.patch('/watson', function(req, res, next) {
   var params = {
     classifier_ids: ['Artists_20950349'],
     url: req.body.imgur_url
-  };   // TEST WITH POWER:  'http://i.imgur.com/cswiXLl.jpg'
+  }; // TEST WITH POWER:  'http://i.imgur.com/cswiXLl.jpg'
 
 
   // images_file: fs.createReadStream('./server/public/images/temp-image.PNG')
 
   console.log("MY PARAMS=", params);
 
-  visual_recognition.classify(params, function(err, res) {
-    if (err)
+  var watsonResult = {};
+
+  visual_recognition.classify(params, function(err, watsonResult) {
+    if (err) {
       console.log(err);
-    else
-      console.log(JSON.stringify(res, null, 2));
+      res.send("MY TUMMY HURTS :(");
+    } else {
+      var myAnswer = JSON.stringify(watsonResult, null, 2)
+      res.json(myAnswer);
+    }
   });
 
+  // console.log("WATSON_RESULT= ", myAnswer);
 
-  res.send("WOO SUCCESS");
 
 });
 
