@@ -51,6 +51,9 @@ function snapshot() {
                 }
                 // JSON.stringify()
 
+                $('#artist').children().remove()
+                $('#score').children().remove()
+
                 $('#artist').append('<h4>' + artistResult.artist + '</h4>')
                 $('#score').append('<h4>' + artistResult.score + '</h4>')
 
