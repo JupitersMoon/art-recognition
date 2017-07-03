@@ -37,3 +37,16 @@ a {
   width: 640px;
   /*height: 480px;*/
 }
+
+.card-content {
+  background-color: #CCDCD9;
+}
+
+.card-action {
+  background-color: #DFE8E3;
+
+}
+
+#email {
+  background-color: #CCDCD9;
+}

@@ -53,11 +53,27 @@ $(document).ready(() => {
               }
               // JSON.stringify()
 
+              // console.log(artistResult.artist);
+              // console.log(artistResult.score);
+              // console.log(result.images[0].classifiers[0].classes[1].class);
+              // console.log(result.images[0].classifiers[0].classes[1].score);
+              // console.log(result.images[0].classifiers[0].classes[2].class);
+              // console.log(result.images[0].classifiers[0].classes[2].score);
+
+
+
               $('#artist').children().remove()
               $('#score').children().remove()
 
-              $('#artist').append('<h4>' + artistResult.artist + '</h4>')
-              $('#score').append('<h4>' + artistResult.score + '</h4>')
+
+
+              if (artistResult.artist != undefined) {
+                $('#artist').append('<h4>' + artistResult.artist + '</h4>')
+                $('#score').append('<h4>' + artistResult.score + '</h4>')
+              } else {
+                $('#artist').append('<h4>' + 'Please try again' + '</h4>')
+              }
+
 
 
 
@@ -84,6 +100,14 @@ $(document).ready(() => {
 
                 })
               });
+
+              ////////////DELETE BUTTON////////////
+              $('#deleteButton').click((event) => {
+                event.preventDefault();
+
+                console.log('Deleting here');
+              })
+
 
             }
 

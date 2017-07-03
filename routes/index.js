@@ -69,7 +69,7 @@ router.patch('/watson', function(req, res, next) {
 
 });
 
-
+//////SAVE TO DB
 router.post('/save', function(req, res, next) {
 
   var artist = req.body.artist
@@ -90,14 +90,77 @@ router.post('/save', function(req, res, next) {
           score: score
         })
       })
-
   }
-
-
-
-
-
 })
+
+
+
+
+/////////GET FROM DB
+router.get('/', (req, res, next) => {
+    knex.from('history')
+        .then((data) => {
+            let history = [];
+            for (var i = 0; i < data.length; i++) {
+                let cardInfo = {
+                    id: data[i].id,
+                    artist: data[i].name,
+                    score: data[i].score
+                };
+                history.push(cardInfo);
+            }
+            res.send(history);
+        })
+        .catch((err) => {
+            next(err);
+        });
+});
+
+router.get('/:id', (req, res, next) => {
+    let myId = parseInt(req.params.id);
+    // console.log(req.body);
+    knex.from('history')
+        .where({
+            id: myId
+        })
+        .first()
+        .then((data) => {
+          let cardInfo = {
+              id: data[i].id,
+              artist: data[i].name,
+              score: data[i].score
+          };
+          res.send(cardInfo);
+        })
+        .catch((err) => {
+            next(err);
+        });
+});
+
+
+////////DELETE ON DB
+router.delete('/:id', (req, res, next) => {
+    var deleteCard;
+    console.log(req.params.id);
+    knex('history')
+        .where('id', req.params.id)
+        .first()
+        .then((responseData) => {
+            deleteCard = responseData;
+            return knex('history')
+                .del()
+                .where('id', req.params.id);
+        })
+        .then(() => {
+          delete deleteCard.created_at;
+          delete deleteCard.updated_at;
+          res.send(deleteCard);
+        })
+        .catch((err) => {
+          next(err);
+        });
+});
+
 
 
 
