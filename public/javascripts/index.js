@@ -8,22 +8,6 @@ $(document).ready(() => {
     console.log('Reeeejected!', e);
   };
 
-
-
-
-
-
-
-
-
-  // //initialize all modals
-  // $('.modal').modal();
-  //
-  // $('#modal1').modal('open');
-  //
-  // $('.trigger-modal').modal();
-
-
   function snapshot() {
     if (localMediaStream) {
       ctx.drawImage(video, 0, 0, 720, 720);
@@ -45,11 +29,6 @@ $(document).ready(() => {
         },
         success: function(res) {
           console.log("Imgur:", res.data.link);
-
-          // make ajax POST
-          // $.put("/api/users/watson", {'b64image': b64image}, function(data){
-          //   console.log("SUCCESS 200 FROM EXPRESS");
-          // });
 
           $.ajax({
             url: '/watson',
@@ -76,12 +55,8 @@ $(document).ready(() => {
               // console.log(result.images[0].classifiers[0].classes[2].class);
               // console.log(result.images[0].classifiers[0].classes[2].score);
 
-
-
               $('#artist').children().remove()
               $('#score').children().remove()
-
-
 
               if (artistResult.artist.length != 0) {
                 $('#artist').append('<h4>' + artistResult.artist + '</h4>')
@@ -90,16 +65,10 @@ $(document).ready(() => {
                 $('#artist').append('<h4>' + 'Please try again' + '</h4>')
               }
 
-
-
-
-
-
-
               ///////SAVE BUTTON ////////
               $('#saveButton').click((event) => {
                 event.preventDefault();
-
+                //
                 var url = res.data.link;
                 var artist = artistResult.artist;
                 var score = artistResult.score;
@@ -109,8 +78,20 @@ $(document).ready(() => {
                 console.log(artist);
                 console.log(score);
 
+                $.ajax({
+                  url: '/save',
+                  type: 'POST',
+                  data: {
+                    'imgur_url': res.data.link,
+                    'artist': artistResult.artist,
+                    'score': artistResult.score
+                  },
+                  success: function(result) {
+                    // console.log('save sending');
+                  }
+                })
 
-                function displayImage(artist, url, score) {
+                function displayImage(artist, score, url) {
                   var newCard =
                   `<div class="row">
                     <div class="col s12 m7">
@@ -129,51 +110,28 @@ $(document).ready(() => {
                         </div>
                       </div>
                     </div>
-                  </div>;`
+                  </div>`
                   $("#savedImage").append(newCard);
-                }
-
-                displayImage()
-
-
-                $.ajax({
-                  url: '/save',
-                  type: 'POST',
-                  data: {
-                    'imgur_url': res.data.link,
-                    'artist': artistResult.artist,
-                    'score': artistResult.score
-                  },
-                  success: function(result) {
-                    // console.log('save sending');
-                  }
-
-                })
-              });
 
               ////////////DELETE BUTTON////////////
-              $('#deleteButton').click((event) => {
-                event.preventDefault();
+                  $('#deleteButton').click((event) => {
+                    event.preventDefault();
 
-                console.log('Deleting here');
-              })
+                    console.log('Deleting here');
+                    $("#savedImage").children().remove();
 
+                  })
 
+                }
+                // $("#savedImage").children().remove();
+                displayImage()
+              });
             }
-
           });
         }
       });
     }
   }
-
-
-
-
-
-
-
-
 
   video.addEventListener('click', snapshot, false);
 
