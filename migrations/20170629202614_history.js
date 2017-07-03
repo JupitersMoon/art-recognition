@@ -5,7 +5,6 @@ exports.up = function(knex) {
     table.string('artist').notNullable();
     table.text('photo').notNullable().defaultTo('http://i.imgur.com/cswiXLl.jpg')
     table.integer('score').notNullable();
-    table.
     table.timestamps(true, true);
   });
 };

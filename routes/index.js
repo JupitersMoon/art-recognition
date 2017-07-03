@@ -71,9 +71,27 @@ router.patch('/watson', function(req, res, next) {
 
 
 router.post('/save', function(req, res, next) {
-  console.log('imgur_url= ', req.body.imgur_url);
-  console.log('artist= ', req.body.artist);
-  console.log('score= ', req.body.score);
+
+  var artist = req.body.artist
+  var score = req.body.score
+  var url = req.body.imgur_url
+
+  console.log('imgur_url= ', url);
+  console.log('artist= ', artist);
+  console.log('score= ', score);
+
+  function saveData(artist, url, score) {
+    knex('history')
+      .where('user_id', userId)
+      .then((data) => {
+        res.render('camera.html', {
+          artist: artist,
+          photo: url,
+          score: score
+        })
+      })
+
+  }
 
 
 
