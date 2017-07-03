@@ -1,9 +1,12 @@
 exports.up = function(knex) {
   return knex.schema.createTable('history', table => {
     table.increments();
-    table.integer('tag_id').notNullable();
     table.integer('user_id').references('users.id').notNullable();
-    table.timestamps(true,true);
+    table.string('artist').notNullable();
+    table.text('photo').notNullable().defaultTo('http://i.imgur.com/cswiXLl.jpg')
+    table.integer('score').notNullable();
+    table.
+    table.timestamps(true, true);
   });
 };
 

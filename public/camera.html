@@ -21,48 +21,60 @@
 </head>
 
 <body>
-  <h1>CAMERA</h1>
+  <div class="center">
 
+    <div class="row">
 
-  <div class="row">
-
-    <div class="col">
-      <video autoplay class="vidCanvas"></video>
-      <canvas style="display:none;" width="720" height="720"></canvas>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <img src="" class="snapshot" id="destinationImage">
-    </div>
-  </div>
-
-  <h1>DISPLAY RESULTS</h1>
-
-  <div class="row">
-    <div class="col s12 m12 l6">
-      <div class="card-small fog-red shadow-border">
-        <div class="card-content text-padding">
-          <h5> Artist </h5>
-        </div>
-        <div class="card-image fog-wine data-padding" id="artist">
+      <div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <video autoplay class="vidCanvas"></video>
+              <canvas style="display:none;" width="720" height="720"></canvas>
+              <span class="card-title">Camera</span>
+            </div>
+            <div class="card-content">
+              <p>Click the image to take a photo of the art</p>
+            </div>
+            <!-- <div class="card-action">
+              <a href="#">This is a link</a>
+            </div> -->
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col s12 m12 l6">
-      <div class="card-small fog-red shadow-border">
-        <div class="card-content text-padding">
-          <h5> Score </h5>
-        </div>
-        <div class="card-image fog-wine data-padding" id="score">
+      <div class="row">
+        <div class="col s12 m7">
+          <div id="snapshotCard" class="card">
+            <div class="card-image">
+              <img src="" class="snapshot" id="destinationImage">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <h4>Artist:</h4>
+              <p id="artist"></p>
+              <h4>Score:</h4>
+              <p id="score"></p>
+            </div>
+
+            <div class="card-action">
+              <a id="saveButton" href="#">Save</a>
+            </div>
+          </div>
         </div>
       </div>
+
+
+
+
+
+      <!--
+    <div id="camFeed">
+
+    </div> -->
+
+
     </div>
-  </div>
 
 
 

@@ -43,7 +43,7 @@ router.patch('/watson', function(req, res, next) {
   });
 
   var params = {
-    classifier_ids: ['Artists_20950349'],
+    classifier_ids: ['Artists_1217841022'],
     url: req.body.imgur_url
   }; // TEST WITH POWER:  'http://i.imgur.com/cswiXLl.jpg'
 
@@ -70,17 +70,22 @@ router.patch('/watson', function(req, res, next) {
 });
 
 
+router.post('/save', function(req, res, next) {
+  console.log('imgur_url= ', req.body.imgur_url);
+  console.log('artist= ', req.body.artist);
+  console.log('score= ', req.body.score);
+
+
+
+
+
+})
+
+
 
 
 module.exports = router;
 
 
 
-//////////////////////////////////////////
-
-
-
-
-
-
-module.exports = router;
+// module.exports = router;

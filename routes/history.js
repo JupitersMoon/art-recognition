@@ -63,7 +63,7 @@ router.post('/', (req, res, next) => {
 });
 
 router.delete('/:id', (req, res, next) => {
-    var deleteMsg;
+    var deleteCard;
     console.log(req.params.id);
     knex('history')
         .where('id', req.params.id)
@@ -75,8 +75,8 @@ router.delete('/:id', (req, res, next) => {
                 .where('id', req.params.id);
         })
         .then(() => {
-          delete deleteMsg.created_at;
-          delete deleteMsg.updated_at;
+          delete deleteCard.created_at;
+          delete deleteCard.updated_at;
           res.send(deleteCard);
         })
         .catch((err) => {
