@@ -36,13 +36,21 @@ a {
 .card {
   width: 640px;
   /*height: 480px;*/
+  border-radius: 2px;
+  border: 2px solid #538794;
+  box-shadow: 4px 4px 14px black;
 }
 
 .card-content {
   background-color: #CCDCD9;
+  border-radius: 0 0 2px 2px;
+
 }
 
 .card-action {
   background-color: #DFE8E3;
+}
 
+.modal-content {
+  border-radius:10px 10px 10px 10px;
 }

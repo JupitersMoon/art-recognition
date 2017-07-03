@@ -44,7 +44,7 @@ $(document).ready(() => {
 
               let artistResult = {
                 artist: result.images[0].classifiers[0].classes[0].class,
-                score: result.images[0].classifiers[0].classes[0].score
+                score: (Math.floor((result.images[0].classifiers[0].classes[0].score) * 100) + ' %')
               }
               // JSON.stringify()
 
@@ -98,7 +98,7 @@ $(document).ready(() => {
                       <div id="" class="card">
                         <div class="card-image">
                           <img src=" `+ res.data.link +` " class="snapshot" id="">
-                          <span class="card-title">Saved</span>
+                          <span class="card-title"><font size="5" color="black">Saved</font></span>
                         </div>
                         <div class="card-content">
                           <h5>Artist: <h5 id="artist"></h5>`+ artistResult.artist +`</h5>
