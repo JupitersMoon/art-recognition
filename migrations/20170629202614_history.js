@@ -4,7 +4,7 @@ exports.up = function(knex) {
     table.integer('user_id').references('users.id').notNullable();
     table.string('artist').notNullable();
     table.text('photo').notNullable().defaultTo('http://i.imgur.com/cswiXLl.jpg')
-    table.integer('score').notNullable();
+    table.string('score').notNullable();
     table.timestamps(true, true);
   });
 };
