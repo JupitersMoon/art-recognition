@@ -11,7 +11,7 @@ $(document).ready(() => {
 
 
     if (!email) {
-      return Materialize.toast('Email must not be blank', 3000);
+      return Materialize.toast('Username must not be blank', 3000);
     }
 
     if (!password) {
