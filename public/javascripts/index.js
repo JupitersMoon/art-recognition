@@ -8,6 +8,22 @@ $(document).ready(() => {
     console.log('Reeeejected!', e);
   };
 
+
+
+
+
+
+
+
+
+  // //initialize all modals
+  // $('.modal').modal();
+  //
+  // $('#modal1').modal('open');
+  //
+  // $('.trigger-modal').modal();
+
+
   function snapshot() {
     if (localMediaStream) {
       ctx.drawImage(video, 0, 0, 720, 720);
@@ -67,7 +83,7 @@ $(document).ready(() => {
 
 
 
-              if (artistResult.artist != undefined) {
+              if (artistResult.artist.length != 0) {
                 $('#artist').append('<h4>' + artistResult.artist + '</h4>')
                 $('#score').append('<h4>' + artistResult.score + '</h4>')
               } else {
@@ -77,14 +93,48 @@ $(document).ready(() => {
 
 
 
+
+
+
               ///////SAVE BUTTON ////////
               $('#saveButton').click((event) => {
                 event.preventDefault();
 
+                var url = res.data.link;
+                var artist = artistResult.artist;
+                var score = artistResult.score;
+
                 console.log("Saving here");
-                console.log(res.data.link);
-                console.log(artistResult.artist);
-                console.log(artistResult.score);
+                console.log(url);
+                console.log(artist);
+                console.log(score);
+
+
+                function displayImage(artist, url, score) {
+                  var newCard =
+                  `<div class="row">
+                    <div class="col s12 m7">
+                      <div id="" class="card">
+                        <div class="card-image">
+                          <img src=" `+ res.data.link +` " class="snapshot" id="">
+                          <span class="card-title">Saved</span>
+                        </div>
+                        <div class="card-content">
+                          <h5>Artist: <h5 id="artist"></h5>`+ artistResult.artist +`</h5>
+                          <h5>Score: <h5 id="score"></h5>`+ artistResult.score +`</h5>
+                        </div>
+
+                        <div class="card-action blue-text">
+                          <a id="deleteButton" href="#">Delete</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>;`
+                  $("#savedImage").append(newCard);
+                }
+
+                displayImage()
+
 
                 $.ajax({
                   url: '/save',
