@@ -1,9 +1,10 @@
 $(document).ready(() => {
 
+  $('.carousel').carousel();
   $('.modal').modal();
   $('.trigger-modal').modal();
 
-//signupForm
+  //signupForm
   $('#signupForm').submit((event) => {
     event.preventDefeault()
 

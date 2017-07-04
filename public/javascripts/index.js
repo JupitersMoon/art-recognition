@@ -139,6 +139,9 @@ $(document).ready(() => {
                 // $("#savedImage").children().remove();
                 displayImage()
               });
+              // artistResult.artist = null
+              // artistResult.score = null
+              // res.data.link = null
             }
           });
         }
