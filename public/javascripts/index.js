@@ -98,7 +98,7 @@ $(document).ready(() => {
                             <div id="snapshotCard" class="card">
                               <div class="card-image">
                                 <img src=" ` + res.data.link + ` " class="snapshot" id="destinationImage">
-                                <span class="card-title"><font size="5" color="black"><font size="5" color="#538794">Result</font></font></span>
+                                <span class="card-title"><font size="5" color="black"><font size="5" color="#538794">Saved</font></font></span>
                               </div>
                               <div class="card-content">
                                 <div class="row">
