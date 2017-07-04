@@ -93,24 +93,37 @@ $(document).ready(() => {
 
                 function displayImage(artist, score, url) {
                   var newCard =
-                  `<div class="row">
-                    <div class="col s12 m7">
-                      <div id="" class="card">
-                        <div class="card-image">
-                          <img src=" `+ res.data.link +` " class="snapshot" id="">
-                          <span class="card-title"><font size="5" color="black">Saved</font></span>
-                        </div>
-                        <div class="card-content">
-                          <h5>Artist: <h5 id="artist"></h5>`+ artistResult.artist +`</h5>
-                          <h5>Score: <h5 id="score"></h5>`+ artistResult.score +`</h5>
-                        </div>
-
-                        <div class="card-action blue-text">
-                          <a id="deleteButton" href="#">Delete</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>`
+                  `      <div class="row">
+                          <div class="col s12 m7">
+                            <div id="snapshotCard" class="card">
+                              <div class="card-image">
+                                <img src=" ` + res.data.link + ` " class="snapshot" id="destinationImage">
+                                <span class="card-title"><font size="5" color="black"><font size="5" color="#538794">Result</font></font></span>
+                              </div>
+                              <div class="card-content">
+                                <div class="row">
+                                  <div class="col s12 m12 l6">
+                                    <h4><font color="#538794">Artist: </font></h4>
+                                  </div>
+                                  <div class="col s12 m12 l6">
+                                    <h4 id="artist"><font color="#538794">` + artistResult.artist + `</font></h4>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col s12 m12 l6">
+                                    <h4><font color="#538794">Score: </font></h4>
+                                  </div>
+                                  <div class="col s12 m12 l6">
+                                    <h4 id="score"><font color="#538794">` + artistResult.score + `</font></h4>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-action">
+                                <a id="deleteButton" href="#">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>`
                   $("#savedImage").append(newCard);
 
               ////////////DELETE BUTTON////////////
