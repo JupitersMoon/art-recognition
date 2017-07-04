@@ -49,7 +49,6 @@ $(document).ready(() => {
     var email = $('#email').val().trim();
     var password = $('#password').val().trim();
 
-
     if (!email) {
       return Materialize.toast('Username must not be blank', 3000);
     }

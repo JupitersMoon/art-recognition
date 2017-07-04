@@ -10,7 +10,7 @@ $(document).ready(() => {
 
   function snapshot() {
     if (localMediaStream) {
-      ctx.drawImage(video, 0, 0, 720, 720);
+      ctx.drawImage(video, 0, 0, 640, 480);
       // "image/webp" works in Chrome.
       // Other browsers will fall back to image/png.
       var b64image = canvas.toDataURL('image/png');
@@ -151,8 +151,8 @@ $(document).ready(() => {
   // Not showing vendor prefixes or code that works cross-browser.
   navigator.getUserMedia({
     video: {
-      width: 720,
-      height: 720
+      width: 640,
+      height: 480
     }
   }, function(stream) {
     video.src = window.URL.createObjectURL(stream);
