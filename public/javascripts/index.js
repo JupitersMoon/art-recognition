@@ -87,16 +87,12 @@ $(document).ready(() => {
                       </div>`
                 $("#savedImage").prepend(newCard);
               }
-
               displayImage()
 
               //////////DELETE BUTTON////////////
               $('#deleteButton').click((event) => {
                 event.preventDefault();
-
                 console.log('Deleting here');
-                // $("#savedImage").children().remove();
-
                 $("#savedImage").children().remove();
               });
             }
