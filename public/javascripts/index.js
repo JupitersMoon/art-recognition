@@ -54,7 +54,7 @@ $(document).ready(() => {
 
               function displayImage(artist, score, url) {
                 var newCard =
-                  `      <div class="row">
+                  `<div class="row">
                         <div class="col s12 m7">
                           <div id="snapshotCard" class="card">
                             <div class="card-image">
