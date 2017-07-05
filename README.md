@@ -44,17 +44,11 @@ What web APIs will it use?
 	getUserMedia API
 
 	Art APi’s:
-		New York Art Beat API
-		https://www.programmableweb.com/api/new-york-art-beat
+		Watson Visual Recognition
+		https://www.ibm.com/watson/developercloud/visual-recognition.html
 
-		Deep Art Effects Style Transfer Enterprise API
-		https://www.programmableweb.com/api/deep-art-effects-style-transfer-enterprise
-
-		Beets API -  album artwork analysis
-		https://www.programmableweb.com/api/beets
-
-		Images d’art API
-		https://www.programmableweb.com/api/images-dart
+		Imgure API
+		https://api.imgur.com/
 
 What technologies will it use?
 	Planning to use the standard tools along with Angular and the Camera from the phone or the laptop.
