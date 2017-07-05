@@ -79,8 +79,8 @@ $(document).ready(() => {
                                 </div>
                               </div>
                             </div>
-                            <div class="card-action">
-                              <a id="deleteButton" href="#">Delete</a>
+                            <div class="card-action" id="deleteButton">
+                              <a href="#">Delete</a>
                             </div>
                           </div>
                         </div>
@@ -97,7 +97,7 @@ $(document).ready(() => {
                 console.log('Deleting here');
                 // $("#savedImage").children().remove();
 
-                $("#savedImage").remove();
+                $("#savedImage").children().remove();
               });
             }
           });
