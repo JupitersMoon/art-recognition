@@ -49,6 +49,7 @@ a {
 
 .card-action {
   background-color: #DFE8E3;
+  cursor: pointer;
 }
 
 .modal-content {
@@ -56,5 +57,5 @@ a {
 }
 
 body.wait {
-  cursor: progress
+  cursor: progress;
 }
