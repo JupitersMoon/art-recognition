@@ -54,3 +54,7 @@ a {
 .modal-content {
   border-radius:10px 10px 10px 10px;
 }
+
+#captureButton {
+  cursor: pointer;
+}
