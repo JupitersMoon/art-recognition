@@ -8,6 +8,8 @@ $(document).ready(() => {
     console.log('Reeeejected!', e);
   };
 
+  var artistResult;
+
   function snapshot() {
     if (localMediaStream) {
       ctx.drawImage(video, 0, 0, 640, 480);
@@ -42,9 +44,10 @@ $(document).ready(() => {
 
               result = JSON.parse(result)
 
-              let artistResult = {
+              artistResult = {
                 artist: result.images[0].classifiers[0].classes[0].class,
-                score: (Math.floor((result.images[0].classifiers[0].classes[0].score) * 100) + ' %')
+                score: (Math.floor((result.images[0].classifiers[0].classes[0].score) * 100) + ' %'),
+                url: res.data.link
               }
               // JSON.stringify()
 
@@ -58,8 +61,8 @@ $(document).ready(() => {
               $('#artist').children().remove()
               $('#score').children().remove()
 
-              if (artistResult.artist.length != 0) {
-                $('#artist').append('<h4>' + artistResult.artist + '</h4>')
+              if (artistResult.artist.length != undefined) {
+                $('#artist').append(`<h4>` + artistResult.artist + '</h4>')
                 $('#score').append('<h4>' + artistResult.score + '</h4>')
               } else {
                 $('#artist').append('<h4>' + 'Please try again' + '</h4>')
@@ -69,7 +72,7 @@ $(document).ready(() => {
               $('#saveButton').click((event) => {
                 event.preventDefault();
                 //
-                var url = res.data.link;
+                var url = artistResult.url;
                 var artist = artistResult.artist;
                 var score = artistResult.score;
 
@@ -136,7 +139,7 @@ $(document).ready(() => {
                   })
 
                 }
-                // $("#savedImage").children().remove();
+                $("#savedImage").children().remove();
                 displayImage()
               });
               // artistResult.artist = null

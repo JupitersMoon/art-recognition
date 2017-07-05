@@ -1,7 +1,8 @@
 $(document).ready(() => {
 
-  $('.carousel').carousel({duration: 100});
-  $('.carousel-slider').slider({duration: 100})
+  $('.carousel').carousel();
+
+  $('.carousel-slider').slider()
 
   $('.modal').modal();
   $('.trigger-modal').modal();
