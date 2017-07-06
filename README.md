@@ -50,11 +50,6 @@ What web APIs will it use?
 		Imgure API
 		https://api.imgur.com/
 
-		Camera feed:
-		.getusermedia()
-		https://www.html5rocks.com/en/tutorials/getusermedia/intro/
-
-
 What technologies will it use?
 	Planning to use the standard tools along with Angular and the Camera from the phone or the laptop.
 
