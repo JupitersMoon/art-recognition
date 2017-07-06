@@ -1,5 +1,5 @@
 body {
-  padding: 30px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -62,4 +62,8 @@ a {
 
 body.wait {
   cursor: progress;
+}
+
+.loginButton {
+  padding-left: 100px;
 }
