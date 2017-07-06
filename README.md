@@ -1,7 +1,7 @@
 # art-recognition
 
 
-Capstone Proposal								Steven Hendricks
+Capstone Project								Steven Hendricks
 
 Art Recognition
 
