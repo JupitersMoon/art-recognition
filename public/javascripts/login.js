@@ -1,9 +1,7 @@
 $(document).ready(() => {
 
   $('.carousel').carousel();
-
   $('.carousel-slider').slider()
-
   $('.modal').modal();
   $('.trigger-modal').modal();
 
